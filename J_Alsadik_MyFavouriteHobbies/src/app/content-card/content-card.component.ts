@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {content} from '../helper-files/content-interface';
-import {ContentList} from '../helper-files/content-list';
+
 
 @Component({
   selector: 'app-content-card',
@@ -11,7 +11,7 @@ export class ContentCardComponent implements OnInit {
 running:content;
 reading:content;
 traveling:content;
-hobbies:ContentList;
+
   constructor() { 
     this.running={
       id:1,
@@ -37,10 +37,7 @@ hobbies:ContentList;
       imgURL:"https://www.vaunte.com/wp-content/uploads/2018/12/Traveling-Internationally.jpg",
       type:"Conformist"
     }
-    this.hobbies=new ContentList();
-    this.hobbies.addItem(this.running);
-    this.hobbies.addItem(this.reading);
-    this.hobbies.addItem(this.traveling);
+    
   }
 
   ngOnInit(): void {
