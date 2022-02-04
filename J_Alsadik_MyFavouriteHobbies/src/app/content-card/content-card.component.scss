@@ -1,0 +1,26 @@
+:host{
+        display:block;
+        border: black solid 1px;
+        margin: 12px auto;
+        width: 400px;
+        height: 450px;
+        box-sizing: border-box;
+        
+        .container{
+            padding: 12px;
+        }
+        h1{
+       text-align: center;
+   }
+   div{
+       text-align: center;
+   }
+    .img{
+        height: 200px;
+        width: 200px;
+       }
+    
+}
+:host.is-first{
+    border: black solid 2px;
+}
