@@ -1,6 +1,14 @@
-<p>content-card works!</p>
-
+<div class="container">
+    <h1 class="title"> Hobby title:  {{hobbies? hobbies.title: ""}}  </h1>
+    <div class="description"> Description:  {{hobbies? hobbies.description:""}} </div>
+    <div class="creater">Creater:  {{hobbies? hobbies.creater:""}}</div>
+    <div><img class="img" (click)="clickevent()" *ngIf="hobbies? hobbies.imgURL  :''"  [src]='hobbies? hobbies.imgURL  :""'/></div>
+    <div class="type" *ngIf="hobbies? hobbies.type  :''">Type:  {{hobbies?  hobbies.type :""}}</div>
+    <div class="tags" *ngIf="hobbies? hobbies.tags  :''">Tags:  {{hobbies? hobbies.tags :""}}</div>
+</div>
 <!-- <div [innerHtml]="hobbies.showItem(0)" style="border: 1px solid black;"></div>
 <div [innerHtml]="hobbies.showItem(1)"style="border: 1px solid black;"></div>
 <div [innerHtml]="hobbies.showItem(2)"style="border: 1px solid black;"></div>
 <div [innerHtml]="hobbies.showItem(3)"style="border: 1px solid black;"></div> -->
+
+
