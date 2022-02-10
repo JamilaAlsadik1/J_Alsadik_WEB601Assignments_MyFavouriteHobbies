@@ -40,7 +40,6 @@ contentArray:content[];
       description:"taking a pictures for nature",
       creater:"Nicéphore Niépce",
       imgURL:"https://www.discoverahobby.com/uploads/activity/227_1562578490.jpg",
-      type:'still life photography',
       tags:['travel','nature','fashion','capture','photo','picture']
       },
       {
@@ -49,7 +48,6 @@ contentArray:content[];
       description:"Drawing can help improve the mood and reduce stress.",
       creater:"Albrecht Dürer",
       imgURL:"https://thumbs.dreamstime.com/b/art-painting-hobby-leisure-girl-drawing-picture-art-painting-hobby-creative-leisure-girl-drawing-picture-sitting-floor-123677461.jpg",
-      type:'sketching',
       tags:['draw','image','scetching']
       },
       {
