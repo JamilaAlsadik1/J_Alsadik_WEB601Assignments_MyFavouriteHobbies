@@ -60,7 +60,17 @@ contentArray:content[];
       imgURL:"https://mediazink.com/wp-content/uploads/2018/01/hair-styling-tools-flat-irons.jpg" ,
       type:"beaury and self care",
       tags:['haircare','color','makeover','transformation' ]
-      }];
+      },
+      {
+        id:7,
+      title:"	Acting",
+      description:"It's nice to preform different kind of charecters ",
+      creater:"thenian ruler Pisistratus",
+      imgURL:"https://actinginlondon.co.uk/wp-content/uploads/2013/07/You-are-an-actor-the-star-of-this-business.jpg" ,
+      type:"Performing Arts",
+      tags:['act','actors','fans' ]
+      }
+    ];
    }
 
   ngOnInit(): void {
