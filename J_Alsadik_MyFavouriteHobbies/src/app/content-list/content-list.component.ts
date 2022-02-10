@@ -66,7 +66,14 @@ contentArray:content[];
       imgURL:"https://actinginlondon.co.uk/wp-content/uploads/2013/07/You-are-an-actor-the-star-of-this-business.jpg" ,
       type:"Performing Arts",
       tags:['act','actors','fans' ]
-      }
+      },{
+        id:8,
+        title:"walking",
+        description:"it's a great sport",
+        creater:"Greece",
+        imgURL:"https://static.oprah.com/2016/05/201605-orig-hiking-949x534.jpg",
+      type:"sport",
+    tags:['sport','hobby','miles'] }
     ];
    }
 
