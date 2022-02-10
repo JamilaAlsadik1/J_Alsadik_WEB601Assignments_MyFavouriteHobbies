@@ -22,7 +22,6 @@ contentArray:content[];
       description:"Getting more knowledges and there alot of types of book",
       creater:"and High Priestess Enheduanna",
       imgURL:"https://s26378.pcdn.co/wp-content/uploads/student-working-on-SAT-reading-section.jpg" ,
-      type:"hobby",
       tags:['hobby','book','reading','library']
       },
       {
