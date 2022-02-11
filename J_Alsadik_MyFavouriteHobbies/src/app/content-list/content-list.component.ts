@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import {content} from '../helper-files/content-interface';
 @Component({
   selector: 'app-content-list',
@@ -7,6 +8,7 @@ import {content} from '../helper-files/content-interface';
 })
 export class ContentListComponent implements OnInit {
 contentArray:content[];
+outPut:string;
   constructor() {
     this.contentArray=[{
       id:1,
@@ -60,7 +62,7 @@ contentArray:content[];
       },
       {
         id:7,
-      title:"	Acting",
+      title:"Acting",
       description:"It's nice to preform different kind of charecters ",
       creater:"thenian ruler Pisistratus",
       imgURL:"https://actinginlondon.co.uk/wp-content/uploads/2013/07/You-are-an-actor-the-star-of-this-business.jpg" ,
@@ -75,9 +77,23 @@ contentArray:content[];
       type:"sport",
     tags:['sport','hobby','miles'] }
     ];
+    this.outPut="";
    }
 
   ngOnInit(): void {
   }
-
+  findTitle(findTitle:string):void{
+    let titleFind=document.getElementsByClassName('titleFind');
+  for(let i=0;this.contentArray.length>=i;i++){
+    console.log(this.contentArray[i].title , findTitle);
+    if(this.contentArray[i].title.toLowerCase()==findTitle.toLowerCase()){
+     this.outPut="this title is available in the content card";
+ console.log('yeeee');
+ break;
+    }
+    else{
+    this.outPut= "this title is not available in the content card";
+    }
+  }
+  }
 }
