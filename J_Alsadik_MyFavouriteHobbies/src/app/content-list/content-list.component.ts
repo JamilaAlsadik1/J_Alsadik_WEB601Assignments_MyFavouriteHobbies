@@ -85,7 +85,7 @@ outPut:string;
   findTitle(findTitle:string):void{
     let titleFind=document.getElementsByClassName('titleFind');
   for(let i=0;this.contentArray.length>=i;i++){
-    console.log(this.contentArray[i].title , findTitle);
+   
     if(this.contentArray[i].title.toLowerCase()==findTitle.toLowerCase()){
      this.outPut="this title is available in the content card";
       break;
