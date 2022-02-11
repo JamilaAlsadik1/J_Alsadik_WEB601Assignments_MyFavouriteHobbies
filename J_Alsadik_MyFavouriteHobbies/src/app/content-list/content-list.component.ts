@@ -88,8 +88,7 @@ outPut:string;
     console.log(this.contentArray[i].title , findTitle);
     if(this.contentArray[i].title.toLowerCase()==findTitle.toLowerCase()){
      this.outPut="this title is available in the content card";
- console.log('yeeee');
- break;
+      break;
     }
     else{
     this.outPut= "this title is not available in the content card";
