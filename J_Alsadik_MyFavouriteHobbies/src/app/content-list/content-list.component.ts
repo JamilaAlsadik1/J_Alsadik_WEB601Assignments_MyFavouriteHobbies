@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import {content} from '../helper-files/content-interface';
 @Component({
   selector: 'app-content-list',
@@ -7,10 +8,11 @@ import {content} from '../helper-files/content-interface';
 })
 export class ContentListComponent implements OnInit {
 contentArray:content[];
+outPut:string;
   constructor() {
     this.contentArray=[{
       id:1,
-      title:"ruuning",
+      title:"running",
       description:"it's a great sport",
       creater:"Greece",
       imgURL:"https://s-i.huffpost.com/gen/4336392/images/o-RUNNING-facebook.jpg",
@@ -22,7 +24,6 @@ contentArray:content[];
       description:"Getting more knowledges and there alot of types of book",
       creater:"and High Priestess Enheduanna",
       imgURL:"https://s26378.pcdn.co/wp-content/uploads/student-working-on-SAT-reading-section.jpg" ,
-      type:"hobby",
       tags:['hobby','book','reading','library']
       },
       {
@@ -40,7 +41,6 @@ contentArray:content[];
       description:"taking a pictures for nature",
       creater:"Nicéphore Niépce",
       imgURL:"https://www.discoverahobby.com/uploads/activity/227_1562578490.jpg",
-      type:'still life photography',
       tags:['travel','nature','fashion','capture','photo','picture']
       },
       {
@@ -49,21 +49,54 @@ contentArray:content[];
       description:"Drawing can help improve the mood and reduce stress.",
       creater:"Albrecht Dürer",
       imgURL:"https://thumbs.dreamstime.com/b/art-painting-hobby-leisure-girl-drawing-picture-art-painting-hobby-creative-leisure-girl-drawing-picture-sitting-floor-123677461.jpg",
-      type:'sketching',
       tags:['draw','image','scetching']
       },
       {
         id:6,
-      title:"hair styling",
+      title:"hairstyling",
       description:"It's a nice hobby that improve our own looks and other looks",
       creater:"Vidal Sassoon",
       imgURL:"https://mediazink.com/wp-content/uploads/2018/01/hair-styling-tools-flat-irons.jpg" ,
       type:"beaury and self care",
       tags:['haircare','color','makeover','transformation' ]
-      }];
+      },
+      {
+        id:7,
+      title:"Acting",
+      description:"It's nice to preform different kind of charecters ",
+      creater:"thenian ruler Pisistratus",
+      imgURL:"https://actinginlondon.co.uk/wp-content/uploads/2013/07/You-are-an-actor-the-star-of-this-business.jpg" ,
+      type:"Performing Arts",
+      tags:['act','actors','fans' ]
+      },{
+        id:8,
+        title:"walking",
+        description:"it's a great sport",
+        creater:"Greece",
+        imgURL:"https://static.oprah.com/2016/05/201605-orig-hiking-949x534.jpg",
+      type:"sport",
+    tags:['sport','hobby','miles'] }
+    ];
+    this.outPut="";
    }
 
   ngOnInit(): void {
   }
-
+  findTitle(findTitle:string):void{
+     for(let i=0;this.contentArray.length>=i;i++){
+       let title=document.querySelector<HTMLElement>(`.${this.contentArray[i].title}`);
+        title?.classList.remove('selected');
+       if(this.contentArray[i].title.toLowerCase()==findTitle.toLowerCase()){
+          this.outPut="this title is available in the content card";
+          title?.classList.remove('selected');
+          title?.classList.add('selected');
+          break;
+        }
+      else{
+         this.outPut= "this title is not available in the content card";
+          }
+      title?.classList.remove('selected');
+    
+  }
+  }
 }
