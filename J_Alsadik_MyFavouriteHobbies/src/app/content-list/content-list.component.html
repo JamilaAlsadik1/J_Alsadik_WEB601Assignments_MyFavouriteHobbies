@@ -1,8 +1,8 @@
 Enter the title:  <input #title> 
 <button (click)="findTitle(title.value)">Submit </button>
-<h2>{{outPut}}</h2>
+<h2 class="header">{{outPut}}</h2>
 <h1>First loop with no type passed </h1>
-<app-content-card  class="noType" *ngFor=' let item of contentArray|filterArrayPipe; index as i; first as isFirst' [hobbies]=item [class.is-first]="isFirst" ></app-content-card>
+<app-content-card  class="noType " *ngFor=' let item of contentArray|filterArrayPipe; index as i; first as isFirst' [hobbies]=item [class.is-first]="isFirst" ></app-content-card>
 <h1>Second loop with "sport" type passed </h1>
 <app-content-card class="sportType" *ngFor=' let item of contentArray|filterArrayPipe:"sport"; index as i; first as isFirst' [hobbies]=item [class.is-first]="isFirst" ></app-content-card>
 <h1>Third loop with "beaury and self care" type passed </h1>

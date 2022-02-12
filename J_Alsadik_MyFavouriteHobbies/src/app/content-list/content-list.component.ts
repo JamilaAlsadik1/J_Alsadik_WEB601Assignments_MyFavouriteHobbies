@@ -12,7 +12,7 @@ outPut:string;
   constructor() {
     this.contentArray=[{
       id:1,
-      title:"ruuning",
+      title:"running",
       description:"it's a great sport",
       creater:"Greece",
       imgURL:"https://s-i.huffpost.com/gen/4336392/images/o-RUNNING-facebook.jpg",
@@ -83,16 +83,20 @@ outPut:string;
   ngOnInit(): void {
   }
   findTitle(findTitle:string):void{
-    let titleFind=document.getElementsByClassName('titleFind');
+    //let titleFind=document.getElementsByClassName('titleFind');
+    
   for(let i=0;this.contentArray.length>=i;i++){
-   
+    let title=document.querySelector<HTMLElement>(`.${this.contentArray[i].title}`);
     if(this.contentArray[i].title.toLowerCase()==findTitle.toLowerCase()){
      this.outPut="this title is available in the content card";
+      title?.classList.add('selected');
       break;
     }
     else{
     this.outPut= "this title is not available in the content card";
     }
+    title?.classList.remove('selected');
+    
   }
   }
 }
