@@ -53,7 +53,7 @@ outPut:string;
       },
       {
         id:6,
-      title:"hair styling",
+      title:"hairstyling",
       description:"It's a nice hobby that improve our own looks and other looks",
       creater:"Vidal Sassoon",
       imgURL:"https://mediazink.com/wp-content/uploads/2018/01/hair-styling-tools-flat-irons.jpg" ,
@@ -83,19 +83,19 @@ outPut:string;
   ngOnInit(): void {
   }
   findTitle(findTitle:string):void{
-    //let titleFind=document.getElementsByClassName('titleFind');
-    
-  for(let i=0;this.contentArray.length>=i;i++){
-    let title=document.querySelector<HTMLElement>(`.${this.contentArray[i].title}`);
-    if(this.contentArray[i].title.toLowerCase()==findTitle.toLowerCase()){
-     this.outPut="this title is available in the content card";
-      title?.classList.add('selected');
-      break;
-    }
-    else{
-    this.outPut= "this title is not available in the content card";
-    }
-    title?.classList.remove('selected');
+     for(let i=0;this.contentArray.length>=i;i++){
+       let title=document.querySelector<HTMLElement>(`.${this.contentArray[i].title}`);
+        title?.classList.remove('selected');
+       if(this.contentArray[i].title.toLowerCase()==findTitle.toLowerCase()){
+          this.outPut="this title is available in the content card";
+          title?.classList.remove('selected');
+          title?.classList.add('selected');
+          break;
+        }
+      else{
+         this.outPut= "this title is not available in the content card";
+          }
+      title?.classList.remove('selected');
     
   }
   }
