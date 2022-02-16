@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { ContentCardComponent } from './content-card/content-card.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { FilterArrayPipePipe } from './filter-array-pipe.pipe';
+import { HoverAffectDirective } from './hover-affect.directive';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { FilterArrayPipePipe } from './filter-array-pipe.pipe';
     ContentCardComponent,
     ContentListComponent,
     FilterArrayPipePipe,
+    HoverAffectDirective,
     
   ],
   imports: [

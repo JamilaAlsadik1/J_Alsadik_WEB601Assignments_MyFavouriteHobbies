@@ -1,10 +1,12 @@
-<div class="container {{hobbies? hobbies.title: ''}}">
-    <h1 class="title "> Hobby title:{{hobbies? hobbies.title: ""}}</h1>
-    <div class="description"> Description:  {{hobbies? hobbies.description:""}} </div>
-    <div class="creater">Creater:  {{hobbies? hobbies.creater:""}}</div>
-    <div><img class="img" (click)="clickevent()" *ngIf="hobbies? hobbies.imgURL  :''"  [src]='hobbies? hobbies.imgURL  :""'/></div>
-    <div class="type" *ngIf="hobbies? hobbies.type  :''">Type:  {{hobbies?  hobbies.type :""}}</div>
-    <div class="tags" *ngIf="hobbies? hobbies.tags  :''">Tags:  {{hobbies? hobbies.tags :""}}</div>
+<div class="container {{hobbies? hobbies.title: ''}}" *ngIf="hobbies">
+    <h1 class="title "*ngIf="hobbies.title"> Hobby title:{{hobbies? hobbies.title: ""}}</h1>
+    <div class="description" *ngIf="hobbies.description"> Description:  {{hobbies? hobbies.description:""}} </div>
+    <div class="creater" *ngIf="hobbies.creater">Creater:  {{hobbies? hobbies.creater:""}}</div>
+    <img class="img" (click)="clickevent()" *ngIf="hobbies.imgURL"  [src]='hobbies.imgURL'/>
+    <img class="img" (click)="clickevent()" *ngIf="!hobbies.imgURL" src="https://content.thriveglobal.com/wp-content/uploads/2018/05/Hobbie.jpeg"/>
+    
+    <div class="type" *ngIf="hobbies.type" appHoverAffect>Type :{{hobbies? hobbies.type :""}} </div>
+    <div class="tags"*ngIf="hobbies.tags" >Tags:  {{hobbies? hobbies.tags :""}}</div>
 </div>
 <!-- <div [innerHtml]="hobbies.showItem(0)" style="border: 1px solid black;"></div>
 <div [innerHtml]="hobbies.showItem(1)"style="border: 1px solid black;"></div>

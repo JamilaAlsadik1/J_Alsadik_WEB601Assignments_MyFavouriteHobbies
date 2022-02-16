@@ -73,7 +73,6 @@ outPut:string;
         title:"walking",
         description:"it's a great sport",
         creater:"Greece",
-        imgURL:"https://static.oprah.com/2016/05/201605-orig-hiking-949x534.jpg",
       type:"sport",
     tags:['sport','hobby','miles'] }
     ];

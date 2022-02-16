@@ -3,7 +3,7 @@ export interface content{
     title:string;
     description:string;
     creater:string;
-    imgURL:string;
+    imgURL?:string;
     type?:string;
     tags?:string[];
  
