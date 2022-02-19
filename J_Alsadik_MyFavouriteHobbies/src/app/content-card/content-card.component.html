@@ -5,8 +5,12 @@
     <img class="img" (click)="clickevent()" *ngIf="hobbies.imgURL"  [src]='hobbies.imgURL'/>
     <img class="img" (click)="clickevent()" *ngIf="!hobbies.imgURL" src="https://content.thriveglobal.com/wp-content/uploads/2018/05/Hobbie.jpeg"/>
     
-    <div class="type" *ngIf="hobbies.type" appHoverAffect>Type :{{hobbies? hobbies.type :""}} </div>
-    <div class="tags"*ngIf="hobbies.tags" >Tags:  {{hobbies? hobbies.tags :""}}</div>
+    <div class="type" *ngIf="hobbies.type" appHoverAffect styling="line" >Type :{{hobbies? hobbies.type :""}} </div>
+    <div class="tags"*ngIf="hobbies.tags" >Tags:
+        <span class="tag" *ngFor="let tag of hobbies.tags" appHoverAffect styling="weight" >
+            {{tag}}
+        </span>  
+    </div>
 </div>
 <!-- <div [innerHtml]="hobbies.showItem(0)" style="border: 1px solid black;"></div>
 <div [innerHtml]="hobbies.showItem(1)"style="border: 1px solid black;"></div>
