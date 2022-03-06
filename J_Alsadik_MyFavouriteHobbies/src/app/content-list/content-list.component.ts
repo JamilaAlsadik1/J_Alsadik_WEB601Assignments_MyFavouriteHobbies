@@ -77,6 +77,7 @@ outPut:string;
     tags:['sport','hobby','miles'] }
     ];
     this.outPut="";
+    
    }
 
   ngOnInit(): void {
@@ -98,4 +99,13 @@ outPut:string;
     
   }
   }
+  
+  addContentToArray(newHobby:content){
+   
+    this.contentArray.push(newHobby);
+    this.contentArray=[...this.contentArray];
+
+  }
+  
+  
 }

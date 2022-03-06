@@ -1,4 +1,4 @@
-<app-create-content></app-create-content>
+<app-create-content (newHobbyEvent)="addContentToArray($event)"></app-create-content>
 
 Enter the title:  <input #title> 
 <button (click)="findTitle(title.value)">Submit </button>
