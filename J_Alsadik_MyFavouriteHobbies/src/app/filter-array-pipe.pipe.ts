@@ -9,7 +9,6 @@ export class FilterArrayPipePipe implements PipeTransform {
   transform(hobbies: content[], htype?:string): content[] {
     return hobbies.filter(function(h){
       if(h.type==htype){
-        console.log(""+htype+" "+h.type);
         return h.type?.length!=0;
         
       }

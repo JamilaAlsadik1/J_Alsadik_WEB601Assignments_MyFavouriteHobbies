@@ -2,3 +2,18 @@
     color: red;
    font-weight: bold ;
 }
+:host .container{
+    display: block;
+    border: black solid 4px;
+    width: 400px;
+    padding: 4px;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+:host p{
+    text-align: left;
+    padding: 3px;
+    font-size: 17px;
+    font-weight: bold;
+    
+}
