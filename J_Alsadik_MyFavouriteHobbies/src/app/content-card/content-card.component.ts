@@ -43,6 +43,7 @@ export class ContentCardComponent implements OnInit {
     console.log(`the title: ${this.hobbies?.title} and the id is : ${this.hobbies?.id}`);
   }
   ngOnInit(): void {
+    
   }
 
 }

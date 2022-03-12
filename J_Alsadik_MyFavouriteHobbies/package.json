@@ -2,6 +2,7 @@
   "name": "j-alsadik-my-favourite-hobbies",
   "version": "0.0.4",
   "scripts": {
+    "generate":"ng generate",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
