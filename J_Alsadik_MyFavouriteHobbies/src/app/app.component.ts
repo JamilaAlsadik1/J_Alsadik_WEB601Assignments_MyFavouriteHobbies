@@ -59,7 +59,7 @@ export class AppComponent {
           title:"",
           description:"",
           creater:"",
-          imgURL:"https://th.bing.com/th/id/OIP.w0uYLECeIr1avF8vzMg1KAHaFh?pid=ImgDet&rs=1"
+          imgURL:"https://miro.medium.com/max/1200/1*6FVkh62q28nvgoNzSZVNHA.jpeg"
         };
       }
       
