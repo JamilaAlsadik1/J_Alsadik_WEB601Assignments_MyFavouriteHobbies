@@ -13,31 +13,24 @@ import { concatMap,filter,map } from 'rxjs/operators';
 export class AppComponent {
   title = 'J_Alsadik_MyFavouriteHobbies';
   oneContent?:content;
+  
   hobbies?:content[];
   selectedHobby?:content;
   id?:number;
   constructor(private hobbyService:HobbyService, private messageService:MessageService){
-
+   
   }
   ngOnInit(): void{
     this.getHobbies();
     
     
-    // this.hobbyService.getContentObj().subscribe((hobby)=>{
-    // for(let i=0; i<=hobby.length;i++){
-    //   if(hobby[i].id==2){
-    //     this.oneContent=hobby[i];
-    //     this.onSelect(hobby[i]);
-    //   }
-    // }
-    
-    //  return this.oneContent;
-    // });
-   
     
   }
   onSelect(content:content): void {
     this.messageService.add(`HobbyComponent: Selected hobby id=${content.id}`);
+  }
+  errorMessage():void{
+    this.messageService.add("Some kind of error occured!");
   }
   getHobbies(): void {
     this.hobbyService.getHobbies()
@@ -48,14 +41,28 @@ export class AppComponent {
     this.hobbyService.getContentObj().subscribe((hobby)=>{
       id=parseInt(id);
       this.id=id;
-      for(let i=0; i<=hobby.length;i++){
-        if(hobby[i].id==id){
-          this.oneContent=hobby[i];
-          this.onSelect(hobby[i]);
+      if(hobby.length>=id){
+        for(let i=0; i<=hobby.length;i++){
+        
+          if(hobby[i].id==id){
+            this.oneContent=hobby[i];
+            this.onSelect(hobby[i]);
+          }
         }
+        
+         return this.oneContent;
+      }
+      else{
+        this.errorMessage();
+        return  this.oneContent={
+          id:0,
+          title:"",
+          description:"",
+          creater:"",
+          imgURL:"https://th.bing.com/th/id/OIP.w0uYLECeIr1avF8vzMg1KAHaFh?pid=ImgDet&rs=1"
+        };
       }
       
-       return this.oneContent;
       });
       
   }
