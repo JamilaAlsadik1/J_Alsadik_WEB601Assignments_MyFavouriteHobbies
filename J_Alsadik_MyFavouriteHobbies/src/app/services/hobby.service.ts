@@ -3,6 +3,7 @@ import { content } from '../helper-files/content-interface';
 import { CONTENTARRAY } from '../helper-files/contentDb';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Injectable({
@@ -10,14 +11,15 @@ import { MessageService } from './message.service';
 })
 export class HobbyService {
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService, private http:HttpClient) { }
  
   getContentObj():Observable<content[]>{
-    return of(CONTENTARRAY);
+    // return of(CONTENTARRAY);
+    return this.http.get<content[]>('api/content');
   }
   getHobbies(): Observable<content[]> {
-    const hobbies = of(CONTENTARRAY);
+    // const hobbies = of(CONTENTARRAY);
     this.messageService.add('Content array loeaded!');
-    return hobbies;
+    return this.http.get<content[]>('api/content');
   }
 }
