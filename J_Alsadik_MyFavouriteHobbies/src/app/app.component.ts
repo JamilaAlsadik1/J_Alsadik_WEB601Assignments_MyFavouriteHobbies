@@ -55,7 +55,7 @@ export class AppComponent {
       else{
         this.errorMessage();
         return  this.oneContent={
-          id:0,
+          // id:0,
           title:"",
           description:"",
           creater:"",
