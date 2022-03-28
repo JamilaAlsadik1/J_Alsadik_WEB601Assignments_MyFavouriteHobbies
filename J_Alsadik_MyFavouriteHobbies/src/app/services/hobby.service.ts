@@ -12,7 +12,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class HobbyService {
 
   constructor(private messageService: MessageService, private http:HttpClient) { }
- 
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-type': 'application/json' })
+  };
   getContentObj():Observable<content[]>{
     // return of(CONTENTARRAY);
     return this.http.get<content[]>('api/content');
@@ -22,4 +24,11 @@ export class HobbyService {
     this.messageService.add('Content array loeaded!');
     return this.http.get<content[]>('api/content');
   }
+  addContent(newContent: content):Observable<content>{
+    this.messageService.add('New content Successfully added!');
+    return this.http.post<content>('api/content', newContent,this.httpOptions);
+  }
+  updateContent(contentItem: content): Observable<any>{
+    return this.http.put("api/content", contentItem, this.httpOptions);
+}
 }

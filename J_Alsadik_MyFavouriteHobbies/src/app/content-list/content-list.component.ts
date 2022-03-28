@@ -39,4 +39,11 @@ outPut:string;
     
   }
   }
+  addHobbyToList(newHobby:content):void{
+   this.hobbyService.addContent(newHobby).subscribe(newfromServer=>{
+     this.contentArray.push(newfromServer);
+     this.contentArray=[...this.contentArray];
+     console.log(newfromServer.id);
+   });
+  }
 }

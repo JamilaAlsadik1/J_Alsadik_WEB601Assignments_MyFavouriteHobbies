@@ -1,1 +1,6 @@
-<p>modify-content-component works!</p>
+<div class="container">
+    
+<p> Title *:<input #title> </p>
+<p> Description *: <input #description> </p>
+<p> creater *:<input #creater> </p>
+<p> <input type="submit" value="Add new hobby" (click)="addContent( title.value,description.value,creater.value)" #button></p>
