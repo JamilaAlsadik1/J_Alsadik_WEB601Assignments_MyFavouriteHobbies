@@ -11,7 +11,8 @@ import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDataService } from "./services/in-memory-data.service";
 import { FormsModule } from '@angular/forms';
 import { ModifyContentComponentComponent } from './modify-content-component/modify-content-component.component';
-
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,8 @@ import { ModifyContentComponentComponent } from './modify-content-component/modi
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    MatButtonModule,
+    MatInputModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
       delay: 500
