@@ -11,6 +11,7 @@ import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDataService } from "./services/in-memory-data.service";
 import { FormsModule } from '@angular/forms';
 import { ModifyContentComponentComponent } from './modify-content-component/modify-content-component.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ModifyContentComponentComponent } from './modify-content-component/modi
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
       delay: 500
-    })
+    }),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
