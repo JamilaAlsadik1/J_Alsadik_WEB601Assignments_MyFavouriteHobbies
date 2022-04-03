@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {content} from '../helper-files/content-interface';
-
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-content-card',

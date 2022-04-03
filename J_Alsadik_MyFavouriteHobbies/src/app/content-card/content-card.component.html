@@ -1,9 +1,13 @@
+<mat-card class="card">
 <div class="container {{hobbies? hobbies.title: ''}}" *ngIf="hobbies">
-    <h1 class="title "*ngIf="hobbies.title"> Hobby title:{{hobbies? hobbies.title: ""}}</h1>
+    <mat-card-header>
+        <mat-card-title class="title "*ngIf="hobbies.title"> Hobby title:{{hobbies? hobbies.title: ""}}</mat-card-title>
+    </mat-card-header>
+   <mat-card-content>
     <div class="description" *ngIf="hobbies.description"> Description:  {{hobbies? hobbies.description:""}} </div>
     <div class="creater" *ngIf="hobbies.creater">Creater:  {{hobbies? hobbies.creater:""}}</div>
-    <img class="img" (click)="clickevent()" *ngIf="hobbies.imgURL"  [src]='hobbies.imgURL'/>
-    <img class="img" (click)="clickevent()" *ngIf="!hobbies.imgURL" src="https://content.thriveglobal.com/wp-content/uploads/2018/05/Hobbie.jpeg"/>
+    <img mat-card-image class="img" (click)="clickevent()" *ngIf="hobbies.imgURL"  [src]='hobbies.imgURL'/>
+    <img mat-card-image class="img" (click)="clickevent()" *ngIf="!hobbies.imgURL" src="https://content.thriveglobal.com/wp-content/uploads/2018/05/Hobbie.jpeg"/>
     
     <div class="type" *ngIf="hobbies.type" appHoverAffect styling="line" >Type :{{hobbies? hobbies.type :""}} </div>
     <div class="tags"*ngIf="hobbies.tags" >Tags:
@@ -11,7 +15,10 @@
             {{tag}}
         </span>  
     </div>
+   </mat-card-content>
+    
 </div>
+</mat-card>
 <!-- <div [innerHtml]="hobbies.showItem(0)" style="border: 1px solid black;"></div>
 <div [innerHtml]="hobbies.showItem(1)"style="border: 1px solid black;"></div>
 <div [innerHtml]="hobbies.showItem(2)"style="border: 1px solid black;"></div>

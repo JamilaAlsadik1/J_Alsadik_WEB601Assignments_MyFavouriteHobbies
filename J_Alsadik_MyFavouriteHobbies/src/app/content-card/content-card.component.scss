@@ -1,26 +1,35 @@
 :host{
-        display:block;
+       display:block;
         border: black solid 1px;
-        margin: 12px auto;
-        width: 400px;
-        height: 450px;
-        box-sizing: border-box;
+       margin: 0 auto;
+      width: 400px;
+       height: inherit;
+       box-sizing: border-box;
+        margin-bottom: 20px;
         
-        .container{
-            padding: 12px;
-        }
-        h1{
-       text-align: center;
-   }
-   div{
-       text-align: center;
-   }
-    .img{
-        height: 200px;
-        width: 200px;
-       }
+        //  .container{
+        //      padding: 12px;
+        //  }
+//         h1{
+//        text-align: center;
+//    }
+//    div{
+//        text-align: center;
+//    }
+//     .img{
+//         height: 200px;
+//         width: 200px;
+      }
        
     
+// }
+:host{
+    .card{
+        max-width: 400px;
+        height: 470px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
 }
 :host.is-first{
     border: black solid 2px;

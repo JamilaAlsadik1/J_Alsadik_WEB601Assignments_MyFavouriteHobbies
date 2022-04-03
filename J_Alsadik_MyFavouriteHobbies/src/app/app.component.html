@@ -1,13 +1,17 @@
 
+<mat-toolbar color="warn">
+    <h1>Searching content at id={{id.value}}</h1>
+</mat-toolbar>
 
-<h1>Searching content at id={{id.value}}</h1>
 <div class="input ">
     <mat-form-field floatLabel="always" appearance="fill">
         <mat-label > Enter Id here :</mat-label>
         <input matInput  placeholder="id" #id>
-    </mat-form-field><br>
+    </mat-form-field>
    
-    <button  mat-raised-button color="primary" (click)="show(id.value)">Show Content</button>
+    <button  mat-raised-button color="primary" 
+    matTooltip="Show content at specific ID"
+    (click)="show(id.value)">Show Content</button>
 </div>
 
 <app-content-card class="oneContent" [hobbies]="oneContent"></app-content-card>
