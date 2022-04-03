@@ -1,0 +1,24 @@
+
+    <h2 mat-dialog-title > adding new content</h2>
+    <div mat-dialog-content>
+        <mat-form-field floatLabel="always" appearance="fill">
+            <mat-label >Title *:</mat-label>
+            <input matInput  #title>
+        </mat-form-field>  <br>
+        <mat-form-field floatLabel="always" appearance="fill">
+            <mat-label >Description *:</mat-label>
+            <input matInput  #description>
+        </mat-form-field><br>
+        <mat-form-field floatLabel="always" appearance="fill">
+            <mat-label >creater *:</mat-label>
+            <input matInput  #creater>
+        </mat-form-field><br>
+    </div >
+    <div mat-dialog-actions>
+        <button mat-raised-button color="primary" (click)="addContent( title.value,description.value,creater.value)" > Add new hobby</button><br> 
+        <button mat-button color="'warn" (click)="close()"> Cancel </button>
+    </div >
+
+
+
+

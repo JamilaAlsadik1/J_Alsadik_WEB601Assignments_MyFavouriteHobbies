@@ -1,6 +1,20 @@
-<div class="container">
-    
-<p> Title *:<input #title> </p>
-<p> Description *: <input #description> </p>
-<p> creater *:<input #creater> </p>
-<p> <input type="submit" value="Add new hobby" (click)="addContent( title.value,description.value,creater.value)" #button></p>
+<!-- <div class="container">
+    <mat-form-field floatLabel="always" appearance="fill">
+        <mat-label >Title *:</mat-label>
+        <input matInput  #title>
+    </mat-form-field>  <br>
+    <mat-form-field floatLabel="always" appearance="fill">
+        <mat-label >Description *:</mat-label>
+        <input matInput  #description>
+    </mat-form-field><br>
+    <mat-form-field floatLabel="always" appearance="fill">
+        <mat-label >creater *:</mat-label>
+        <input matInput  #creater>
+    </mat-form-field><br>
+   
+
+
+<button mat-raised-button color="primary" (click)="addContent( title.value,description.value,creater.value)" > Add new hobby</button><br> <br>
+
+</div> -->
+<button mat-raised-button color="accent" (click)="openDialog()" >Add New Content</button>

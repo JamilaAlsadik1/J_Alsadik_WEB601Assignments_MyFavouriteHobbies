@@ -13,6 +13,11 @@ import { FormsModule } from '@angular/forms';
 import { ModifyContentComponentComponent } from './modify-content-component/modify-content-component.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MyDialogComponent } from './my-dialog/my-dialog.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +27,8 @@ import {MatInputModule} from '@angular/material/input';
     HoverAffectDirective,
     MessagesComponent,
     ModifyContentComponentComponent,
+    MyDialogComponent
+ 
     
   ],
   imports: [
@@ -30,6 +37,8 @@ import {MatInputModule} from '@angular/material/input';
     HttpClientModule,
     MatButtonModule,
     MatInputModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
       delay: 500

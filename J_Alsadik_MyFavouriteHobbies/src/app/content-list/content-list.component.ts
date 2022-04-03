@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {content} from '../helper-files/content-interface';
+import { ModifyContentComponentComponent } from '../modify-content-component/modify-content-component.component';
 import { HobbyService } from '../services/hobby.service';
 @Component({
   selector: 'app-content-list',
@@ -11,7 +12,7 @@ export class ContentListComponent implements OnInit {
 contentArray:content[];
 outPut:string;
 
-  constructor(private hobbyService:HobbyService) {
+  constructor(private hobbyService:HobbyService,public dialog: MatDialog) {
    this.contentArray=[];
     this.outPut="";
     
@@ -39,6 +40,7 @@ outPut:string;
     
   }
   }
+  
   addHobbyToList(newHobby:content):void{
    this.hobbyService.addContent(newHobby).subscribe(newfromServer=>{
      this.contentArray.push(newfromServer);

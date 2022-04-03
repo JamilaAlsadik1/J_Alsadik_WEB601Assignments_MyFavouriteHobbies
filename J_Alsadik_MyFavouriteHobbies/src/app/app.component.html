@@ -2,8 +2,12 @@
 
 <h1>Searching content at id={{id.value}}</h1>
 <div class="input ">
-    Enter Id here : <input placeholder="id" #id>
-    <button (click)="show(id.value)">Show Content</button>
+    <mat-form-field floatLabel="always" appearance="fill">
+        <mat-label > Enter Id here :</mat-label>
+        <input matInput  placeholder="id" #id>
+    </mat-form-field><br>
+   
+    <button  mat-raised-button color="primary" (click)="show(id.value)">Show Content</button>
 </div>
 
 <app-content-card class="oneContent" [hobbies]="oneContent"></app-content-card>
