@@ -3,6 +3,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import {content} from '../helper-files/content-interface';
 import { ModifyContentComponentComponent } from '../modify-content-component/modify-content-component.component';
 import { HobbyService } from '../services/hobby.service';
+import { MessageService } from '../services/message.service';
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
@@ -11,14 +12,19 @@ import { HobbyService } from '../services/hobby.service';
 export class ContentListComponent implements OnInit {
 contentArray:content[];
 outPut:string;
-
-  constructor(private hobbyService:HobbyService,public dialog: MatDialog) {
+oneContent?:content;
+  
+  hobbies?:content[];
+  selectedHobby?:content;
+  id?:number;
+  constructor(private hobbyService:HobbyService,public dialog: MatDialog, private messageService:MessageService) {
    this.contentArray=[];
     this.outPut="";
     
    }
 
   ngOnInit(): void {
+    this.getHobbies();
    this.hobbyService.getContentObj().subscribe(array=>this.contentArray=array);
   
 
@@ -47,5 +53,45 @@ outPut:string;
      this.contentArray=[...this.contentArray];
      console.log(newfromServer.id);
    });
+  }
+  onSelect(content:content): void {
+    this.messageService.add(`HobbyComponent: Selected hobby id=${content.id}`);
+  }
+  errorMessage():void{
+    this.messageService.add("Some kind of error occured!");
+  }
+  getHobbies(): void {
+    this.hobbyService.getHobbies()
+        .subscribe(hobbies => this.hobbies = hobbies);
+  }
+  show(id:any):void{
+    
+    this.hobbyService.getContentObj().subscribe((hobby)=>{
+      id=parseInt(id);
+      this.id=id;
+      if(hobby.length>=id){
+        for(let i=0; i<=hobby.length;i++){
+        
+          if(hobby[i].id==id){
+            this.oneContent=hobby[i];
+            this.onSelect(hobby[i]);
+          }
+        }
+        
+         return this.oneContent;
+      }
+      else{
+        this.errorMessage();
+        return  this.oneContent={
+          // id:0,
+          title:"",
+          description:"",
+          creater:"",
+          imgURL:"https://miro.medium.com/max/1200/1*6FVkh62q28nvgoNzSZVNHA.jpeg"
+        };
+      }
+      
+      });
+      
   }
 }

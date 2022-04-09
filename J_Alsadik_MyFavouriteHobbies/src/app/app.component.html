@@ -1,20 +1,4 @@
+<router-outlet></router-outlet>
 
-<mat-toolbar color="warn">
-    <h1>Searching content at id={{id.value}}</h1>
-</mat-toolbar>
-
-<div class="input ">
-    <mat-form-field floatLabel="always" appearance="fill">
-        <mat-label > Enter Id here :</mat-label>
-        <input matInput  placeholder="id" #id>
-    </mat-form-field>
-   
-    <button  mat-raised-button color="primary" 
-    matTooltip="Show content at specific ID"
-    (click)="show(id.value)">Show Content</button>
-</div>
-
-<app-content-card class="oneContent" [hobbies]="oneContent"></app-content-card>
-
-<app-messages></app-messages>
-<app-content-list></app-content-list>
+<!-- <app-messages></app-messages>
+<app-content-list></app-content-list> -->
