@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { content } from '../helper-files/content-interface';
 import { HobbyService } from '../services/hobby.service';
 import {MatCardModule} from '@angular/material/card';
+import { MessageService } from '../services/message.service';
 @Component({
   selector: 'app-content-detail',
   templateUrl: './content-detail.component.html',
@@ -11,7 +12,7 @@ import {MatCardModule} from '@angular/material/card';
 export class ContentDetailComponent implements OnInit {
  hobbies?: content;
  id?:number;
-  constructor(private route:ActivatedRoute, private hobbyService:HobbyService) { }
+  constructor(private route:ActivatedRoute, private hobbyService:HobbyService,private messageService:MessageService) { }
   clickevent(){
     console.log(`the title: ${this.hobbies?.title} and the id is : ${this.hobbies?.id}`);
   }
@@ -21,9 +22,11 @@ export class ContentDetailComponent implements OnInit {
       this.hobbyService.getContentItem(this.id).subscribe(
         (c)=>{
           this.hobbies=c;
+          this.messageService.add(`The hobby ${this.hobbies.title} at the id ${this.id} is retrieved`);
         }
       );
     });
+    
   }
 
 }
