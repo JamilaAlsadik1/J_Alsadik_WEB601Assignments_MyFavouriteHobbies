@@ -19,6 +19,7 @@ import { MyDialogComponent } from './my-dialog/my-dialog.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatDialogModule,
     MatCardModule,
     MatToolbarModule,
+    AppRoutingModule,
     MatTooltipModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
