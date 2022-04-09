@@ -31,4 +31,7 @@ export class HobbyService {
   updateContent(contentItem: content): Observable<any>{
     return this.http.put("api/content", contentItem, this.httpOptions);
 }
+getContentItem(id:number):Observable<content>{
+  return this.http.get<content>("api/content/"+id);
+}
 }

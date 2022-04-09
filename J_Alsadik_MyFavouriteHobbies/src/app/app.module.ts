@@ -20,6 +20,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { AppRoutingModule } from './app-routing.module';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AppRoutingModule } from './app-routing.module';
     HoverAffectDirective,
     MessagesComponent,
     ModifyContentComponentComponent,
-    MyDialogComponent
+    MyDialogComponent,
+    ContentDetailComponent
  
     
   ],
