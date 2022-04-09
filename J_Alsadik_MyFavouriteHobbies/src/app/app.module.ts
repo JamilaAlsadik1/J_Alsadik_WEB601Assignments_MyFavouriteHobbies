@@ -21,6 +21,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { AppRoutingModule } from './app-routing.module';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ContentDetailComponent } from './content-detail/content-detail.componen
     MessagesComponent,
     ModifyContentComponentComponent,
     MyDialogComponent,
-    ContentDetailComponent
+    ContentDetailComponent,
+    PageNotFoundComponent
  
     
   ],

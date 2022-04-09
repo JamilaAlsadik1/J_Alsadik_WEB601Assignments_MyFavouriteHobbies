@@ -4,7 +4,7 @@
         <mat-card-title class="title "*ngIf="hobbies.title"> Hobby title:{{hobbies? hobbies.title: ""}}</mat-card-title>
     </mat-card-header>
    <mat-card-content>
-    <div class="description" *ngIf="hobbies.description"> Description:  {{hobbies? hobbies.description:""}} </div>
+    <!-- <div class="description" *ngIf="hobbies.description"> Description:  {{hobbies? hobbies.description:""}} </div> -->
     <div class="creater" *ngIf="hobbies.creater">Creater:  {{hobbies? hobbies.creater:""}}</div>
     <img mat-card-image class="img" (click)="clickevent()" *ngIf="hobbies.imgURL"  [src]='hobbies.imgURL'/>
     <img mat-card-image class="img" (click)="clickevent()" *ngIf="!hobbies.imgURL" src="https://content.thriveglobal.com/wp-content/uploads/2018/05/Hobbie.jpeg"/>
@@ -15,6 +15,7 @@
             {{tag}}
         </span>  
     </div>
+    <a [routerLink]="['/list',hobbies?.id??0]">more details</a>
    </mat-card-content>
     
 </div>
