@@ -25,13 +25,13 @@ export class AppComponent {
   }
   ngOnInit(): void{
     this.logService.init();
-    // const appIsStable$ = this.appRef.isStable.pipe(
-    //   first((isStable: boolean) => isStable === true));
-    //   const everyHalfHour$ = interval(0.5 * 60 * 60 * 1000);
-    //   const everyHourOnceAppIsStable$ =
-    //   concat(appIsStable$, everyHalfHour$);
-    //   everyHourOnceAppIsStable$.subscribe(
-    //   () => this.updates.checkForUpdate());
+    const appIsStable$ = this.appRef.isStable.pipe(
+      first((isStable: boolean) => isStable === true));
+      const everyHalfHour$ = interval(0.5 * 60 * 60 * 1000);
+      const everyHourOnceAppIsStable$ =
+      concat(appIsStable$, everyHalfHour$);
+      everyHourOnceAppIsStable$.subscribe(
+      () => this.updates.checkForUpdate());
     
     
   }
