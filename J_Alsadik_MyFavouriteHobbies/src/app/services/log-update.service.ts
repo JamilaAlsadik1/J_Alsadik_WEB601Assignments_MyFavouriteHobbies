@@ -8,9 +8,6 @@ export class LogUpdateService {
 
   constructor(private updates: SwUpdate,private _snackBar: MatSnackBar) { }
   public init() {
-    
-    this.updates.activateUpdate().then(() =>
-document.location.reload())
     this.updates.versionUpdates.subscribe(event => {
       console.log("check for changes");
       switch (event.type) {
@@ -20,11 +17,10 @@ document.location.reload())
           break;
         case 'VERSION_READY':
          let snackRef= this._snackBar.open("app is ready and have update","update" );
-         snackRef.onAction().subscribe(() => {
-          this.updates.activateUpdate().then(() =>
-            document.location.reload());
+        snackRef.onAction().subscribe(() => {
+        this.updates.activateUpdate().then(() =>
+          document.location.reload());
         });
-         
           break;
       }
     });
