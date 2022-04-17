@@ -22,9 +22,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { AppRoutingModule } from './app-routing.module';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ServiceWorkerModule } from '@angular/service-worker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +37,6 @@ import { environment } from '../environments/environment';
     MyDialogComponent,
     ContentDetailComponent,
     PageNotFoundComponent
- 
     
   ],
   imports: [
@@ -52,6 +51,7 @@ import { environment } from '../environments/environment';
     MatToolbarModule,
     AppRoutingModule,
     MatTooltipModule,
+    MatSnackBarModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
       delay: 500

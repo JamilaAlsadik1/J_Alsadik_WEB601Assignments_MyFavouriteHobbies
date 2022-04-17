@@ -40,7 +40,7 @@ export class ContentCardComponent implements OnInit {
     
   }
   clickevent(){
-    console.log(`the title: ${this.hobbies?.title} and the id is : ${this.hobbies?.id}`);
+    console.log(`the title: ${this.hobbies?.title} and the id for this hobby is  : ${this.hobbies?.id}`);
   }
   ngOnInit(): void {
     

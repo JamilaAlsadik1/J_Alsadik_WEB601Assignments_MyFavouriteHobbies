@@ -4,6 +4,7 @@ import { MessageService } from './services/message.service';
 import { HobbyService } from './services/hobby.service';
 import {  subscribeOn } from 'rxjs';
 import { concatMap,filter,map } from 'rxjs/operators';
+import { LogUpdateService } from './services/log-update.service';
 
 @Component({
   selector: 'app-root',
@@ -17,11 +18,11 @@ export class AppComponent {
   // hobbies?:content[];
   // selectedHobby?:content;
   // id?:number;
-  constructor(){
+  constructor(private logService: LogUpdateService){
    
   }
   ngOnInit(): void{
-    
+    this.logService.init();
     
     
     

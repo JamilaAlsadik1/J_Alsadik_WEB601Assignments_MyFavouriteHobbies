@@ -4,7 +4,7 @@
   "scripts": {
     "generate": "ng generate",
     "ng": "ng",
-    "start": "http-server -p 2020 -c-1 dist/j-alsadik-my-favourite-hobbies",
+    "start": "http-server -p 8080 -c-1 dist/j-alsadik-my-favourite-hobbies",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
